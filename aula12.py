@@ -1,3 +1,5 @@
+#neste bloco é capiturado os dados
+
 name = input('qual é o seu nome: ')
 ano_nascimento = int(input('qual é seu ano nascimento: '))
 idade = 2023 - ano_nascimento
