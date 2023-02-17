@@ -1,6 +1,9 @@
+#coletando a informação sobre a pessoa
 name = input('qual é o seu nome: ')
 ano_nascimento = int(input('qual é seu ano nascimento: '))
 idade = 2023 - ano_nascimento
+
+# this block verifi age the people
 
 if idade < 18:
     print('você é menor de idade')
