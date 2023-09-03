@@ -1,12 +1,22 @@
-texto = 'Anotonio flávio vieira da Silva'
-novo_texto = ''
-for letra in texto:
-    if letra == ' ':
+
+palavra_secreta = 'perfume'
+letras_acetadas = ''
+
+while True:
+    letra_digitada = input('digite uma letra: ')
+
+    if len(letra_digitada) > 1:
+        print('Digite apenas uma letra. ')
         continue
 
-    novo_texto += f'*{letra}'
+    if letra_digitada in palavra_secreta:
+        letras_acetadas += letra_digitada
 
-
-    print(letra)
-print(novo_texto.upper() + '*')
+    palavra_formada = ''
+    for letra_secreta in palavra_secreta:
+        if letra_secreta in letras_acetadas:
+            palavra_formada += letra_secreta
+        else:
+            palavra_formada += '*'
+    print(palavra_formada)
 
