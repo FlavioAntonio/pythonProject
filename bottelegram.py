@@ -3,7 +3,7 @@ import os
 import platform
 
 # cria uma instancia do bot
-bot = telebot.TeleBot('6349438511:AAFIaITWjswPa259XF5m8yTsVPkPhxzAmJ8')
+bot = telebot.TeleBot('')
 
 
 # Defina um manipulador de mensagens
