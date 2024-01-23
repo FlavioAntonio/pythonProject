@@ -13,13 +13,14 @@ def validar_cpf():
     print(digito)
     #segunda parte do codigo
 
-    lista_digitos = cpf[:10] + cpf[0]
-    contador_2 = 10
+    lista_digitos = cpf[:10]
+    contador_2 = 11
     resultado_2 = 0
     for digito1 in lista_digitos:
         resultado_2 += int(digito1) * contador_2
         contador_2 -= 1
         digito1 = (resultado_2 * 10) % 11
+        #print(digito1)
         digito1 = digito1 if digito1 <= 9 else 0
     print(digito1)
 
