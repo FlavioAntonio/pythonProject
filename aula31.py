@@ -1,6 +1,21 @@
+import re
+import sys
+
+
 def validar_cpf():
     #capiturando o cpf
-    cpf = input('Digite seu cpf')
+
+    entrada =  input('Digite seu CPF: ')
+
+    cpf = re.sub(
+        r'[^0-9]',
+        '',
+        entrada
+    )
+    entrada_e_sequencial = entrada == entrada[0] * len(entrada)
+    if entrada_e_sequencial:
+        print('Você digitou valores sequenciais')
+        sys.exit()
 
     nove_digitos = cpf[:9]
     contador_1 = 10
