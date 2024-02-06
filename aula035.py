@@ -13,7 +13,14 @@ perguntas = [
         'Pergunta': 'Quanto é 10/2',
         'Opção': ['4', '5', '2', '1'],
         'Resposta': '5',
+    },
+    {
+        'Pergunta': 'Quanto é 10 * 3',
+        'Opção': ['54', '15', '30', '1'],
+        'Resposta': '5',
+    
     }
+        
 ]
 
 acerto = 0
@@ -30,7 +37,9 @@ for pergunta in perguntas:
     if escolha == pergunta['Resposta']:
         print('Você acertou 👋')
         acerto +=1
-        
+        continuar = input('Deseja continuar:❓')
+        if continuar == 'não':
+            break
     else:
         print('Você errou ❌')
 
