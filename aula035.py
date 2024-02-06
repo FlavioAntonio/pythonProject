@@ -28,7 +28,7 @@ for pergunta in perguntas:
     escolha = input('Escolha uma opção: ')
 
     if escolha == pergunta['Resposta']:
-        print('Você acertou 😍')
+        print('Você acertou 👋')
         acerto +=1
         
     else:
