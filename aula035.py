@@ -19,6 +19,12 @@ perguntas = [
         'Opção': ['54', '15', '30', '1'],
         'Resposta': '5',
     
+    },
+    {
+        'Pergunta': 'Qual a cor do Cavalo brando São pedro',
+        'Opção': ['Azul', 'preto', 'Branco', 'Verde'],
+        'Resposta': 'Branco',
+    
     }
         
 ]
