@@ -1,3 +1,4 @@
+#criando funçoes
 def multplication(*args):
     x = 1
     for number in args:

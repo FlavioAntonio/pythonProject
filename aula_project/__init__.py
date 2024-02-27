@@ -1,0 +1,1 @@
+from aula_project.produtos_modulo import produtos
