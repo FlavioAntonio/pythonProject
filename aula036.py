@@ -1,20 +1,13 @@
-lista = [
-    {'nome': 'Luiz', 'sobrenome': 'miranda'},
-    {'nome': 'Carlos', 'sobrenome': 'Da Silva'},
-    {'nome': 'André', 'sobrenome': 'Oliveira'},
-    {'nome': 'Pedro', 'sobrenome': 'Martins'},
-    {'nome': 'Tiago', 'sobrenome': 'Pereira'},
-    {'nome': 'João', 'sobrenome': 'Gold'},
-    
-]
+pessoa ={
+    'nome': 'Antonio Flavio',
+    'sobrenome': 'Vieira da Silva',
+    'idade': 18,
+    'altura': 1.7,
+    'enderecos': [
+        {'rua': 'Rua michael Marques de melo', 'numero': 140},
+        {'rua': 'Avenida Presidente Artur bernardes', 'numero': 3350}
+    ]
+}
 
-def exibir(lista):
-    for item in lista:
-        print(item)
-    print()
 
-l1 = sorted(lista, key=lambda item: item['nome'])
-l2 = sorted(lista, key=lambda item: item['sobrenome'])
 
-exibir(l1)
-exibir(l2)

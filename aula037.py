@@ -1,14 +1,30 @@
-produtos = [
-    {'nome': 'p1', 'preco': 20},
-    {'nome': 'p2', 'preco': 10},
-    {'nome': 'p3', 'preco': 50},
-    {'nome': 'p4', 'preco': 9},
-    {'nome': 'p5', 'preco': 4},
-]
-novos_produtos = [
-    {**produto, 'preco': produto['preco'] * 1.05}
-    if produto['preco'] > 20 else {**produto}
-    for produto in produtos
-]
+def jogo():
+    perguntas = [
+        {
+        'Pergunta': 'Quanto é 2 + 2',
+        'Opção': ['1', '3', '4', '5'],
+        'Resposta': '4'
+        },
+        {
+        'Pergunta': 'Quanto é 5 * 5',
+        'Opção': ['25', '55', '10', '51'],
+        'Resposta': '25'
+        },
+        {
+        'Pergunta': 'Quanto é 10/2',
+        'Opção': ['4', '5', '2', '1'],
+        'Resposta': '5'
+        },
+    ]
 
-print(*novos_produtos, sep='\n')
+    for x in perguntas():
+        ...
+        for y in perguntas():
+            ...
+
+
+
+jogo()
+
+
+
