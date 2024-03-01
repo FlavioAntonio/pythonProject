@@ -1,7 +1,11 @@
-lista_a = [1, 2, 3, 4, 5, 6, 7]
-lista_b = [1, 2, 3, 4]
+def zipper(lista1, lista2):
+   # print(min(1, 2))
+   intervalo_maximo = min(len(lista1), len(lista2))
+   return [
+       (lista1[i], lista2[i]) for i in range(intervalo_maximo)
+   ]
 
-lista_soma = []
-for i in range(len(lista_b)):
-    lista_soma.append(lista_a[i] + lista_b[i])
-print(lista_soma)
+l1 = ['Salvador', 'Ubatuba', 'Belo Horizonte']
+l2 = ['BA', 'SP', 'MG', 'RJ']
+
+print(zipper(l1, l2))
