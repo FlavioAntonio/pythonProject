@@ -1,0 +1,5 @@
+Error: qualquer coisa
+Success: sucesso
+Error: qualquer coisa
+Success: sucesso
+Error: erro ao executar o programa
