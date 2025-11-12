@@ -1,5 +1,8 @@
-Error: qualquer coisa
-Success: sucesso
-Error: qualquer coisa
-Success: sucesso
-Error: erro ao executar o programa
+
+Success: iPhone 13 está desligado.
+Success: iPhone 13 está desligado.
+Success: Galaxy S21 está ligado.
+Success: iPhone 13 está desligado.
+Success: Galaxy S21 está ligado.
+Success: iPhone 13 está desligado.
+Success: iPhone 13 está ligado.
