@@ -12,6 +12,9 @@ class Log:
     def log_success(self, msg):
         return self._log(f'Success: {msg}')
     
+    def log_eception(self, msg):
+        return self._log(f'Exception: {msg}')
+    
 class LogFileMinin(Log):
     def _log(self, msg):
         msg_formatada = f'{msg} ({self.__class__.__name__})'
