@@ -6,3 +6,5 @@ Success: iPhone 13 está desligado.
 Success: Galaxy S21 está ligado.
 Success: iPhone 13 está desligado.
 Success: iPhone 13 está ligado.
+Error: erro ao executar o programa
+Error: erro ao executar o programa

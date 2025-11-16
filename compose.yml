@@ -1,0 +1,89 @@
+version: '2'
+
+services:
+  novosga:
+    image: novosga/novosga:2.2.0
+    volumes:
+    - /home/sga/arquivos/docker/sga/images:/var/www/html/public/images
+    restart: always
+    depends_on:
+    - mysqldb
+    ports:
+    - "80:8080"
+    environment:
+      APP_ENV: 'prod'
+      # database connection
+      DATABASE_URL: 'mysql://novosga:SQLD8-rOOt_Foword78@mysqldb:3306/novosga2?charset=utf8mb4&serverVersion=5.7.40' 
+      # na linha acima tem a senha do baco de dados no logono inicial
+      # default admin user
+      NOVOSGA_ADMIN_USERNAME: 'admin'
+      NOVOSGA_ADMIN_PASSWORD: 'SQLD8-rOOt_Foword78'
+      NOVOSGA_ADMIN_FIRSTNAME: 'Administrador'
+      NOVOSGA_ADMIN_LASTNAME: 'Global'
+      # default unity
+      NOVOSGA_UNITY_NAME: 'Minha unidade'
+      NOVOSGA_UNITY_CODE: 'U01'
+      # default no-priority
+      NOVOSGA_NOPRIORITY_NAME: 'Normal'
+      NOVOSGA_NOPRIORITY_DESCRIPTION: 'Atendimento normal'
+      # default priority
+      NOVOSGA_PRIORITY_NAME: 'Prioridade'
+      NOVOSGA_PRIORITY_DESCRIPTION: 'Atendimento prioritário'
+      # default place
+      NOVOSGA_PLACE_NAME: 'Mesa'
+      # Set TimeZone and locale
+      TZ: 'America/Sao_Paulo'
+      APP_LANGUAGE: 'pt_BR'
+      # Endereço Mercure ajustado (AGORA COM //)
+      MERCURE_URL: http://ec2-56-125-124-14.sa-east-1.compute.amazonaws.com:3000/.well-known/mercure
+      # Endereço Mercure ajustado (AGORA COM //)
+      MERCURE_PUBLIC_URL: http://ec2-56-125-124-14.sa-east-1.compute.amazonaws.com:3000/.well-known/mercure
+  mercure:
+    image: novosga/mercure:v0.11
+    restart: always
+    ports:
+    - "3000:3000"
+    environment:
+      # same value from ports
+      SERVER_NAME: ":3000"
+      # default publish key, must be changed
+      MERCURE_PUBLISHER_JWT_KEY: "!ChangeThisMercureHubJWTSecretKey!"
+      MERCURE_SUBSCRIBER_JWT_KEY: "!ChangeThisMercureHubJWTSecretKey!"
+      MERCURE_EXTRA_DIRECTIVES: "anonymous 1; cors_origins *"
+  mysqldb:
+    image: mysql:5.7
+    volumes:
+    - mysqldb_data:/var/lib/mysql # Usa o nome interno 'mysqldb_data'
+    restart: always
+    environment:
+      MYSQL_USER: 'novosga'
+      MYSQL_DATABASE: 'novosga2'
+      MYSQL_ROOT_PASSWORD: 'SQLD8-rOOt_Foword78' # Senha Root do MySQL
+      MYSQL_PASSWORD: 'SQLD8-rOOt_Foword78'
+      # Set TimeZone
+      TZ: 'America/Sao_Paulo'
+  # ----------------------------------
+  # NOVO SERVIÇO: phpmyadmin
+  # ----------------------------------
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin_novosga
+    restart: always
+    depends_on:
+    - mysqldb
+    ports:
+    - "2000:80" # Porta 2000 do host para a porta 80 do container
+    environment:
+      PMA_HOST: mysqldb # O nome do serviço do banco de dados (crucial)
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: 'SQLD8-rOOt_Foword78' # Ajustada para a mesma senha ROOT do serviço mysqldb
+
+volumes:
+  mysqldb_data: # Define o volume nomeado que será mapeado
+    external: # remover essas linha caso o banco ainda não exista
+      name: sga_mysqldb_data # **SINTAXE CORRETA:** Mapeia para o volume existente 
+      ## remover essas linha caso o banco ainda não exista
+
+#volumes:
+#  mysqldb_data:
+
