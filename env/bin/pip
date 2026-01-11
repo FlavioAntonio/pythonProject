@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/home/flavio/Área de trabalho/pythonProject/env/bin/python3" "$0" "$@"
+'''exec' "/home/flavio/Área de trabalho/pythonProject/env/bin/python" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re
