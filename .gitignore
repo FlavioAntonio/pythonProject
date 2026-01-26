@@ -1,0 +1,31 @@
+# Ignorar arquivos de configuração do sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar dependências (Node.js)
+node_modules/
+
+# Ignorar dependências (Python)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+env/
+venv/
+
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos temporários
+*.tmp
+*.swp
+
+# Ignorar arquivos de build
+dist/
+build/
+out/
+
+# Ignorar configurações locais
+.env
+.idea

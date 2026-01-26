@@ -1,0 +1,10 @@
+import os
+caminho = os.path.join('Desktop', 'curso', 'aula168.txt')
+print(caminho)
+diretorio, arquivo = os.path.split(caminho)
+print('Diretório:', diretorio)
+print('Arquivo:', arquivo)
+nome_arquivo, extensao = os.path.splitext(arquivo)
+print('extensão:', extensao)
+print(os.path.basename(diretorio))
+print(os.path.dirname(caminho))

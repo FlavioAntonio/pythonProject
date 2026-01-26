@@ -1,3 +1,5 @@
 import calendar
+import locale
 
-print(calendar.month(2024, 6))
+locale.setlocale(locale.LC_ALL, '')
+print(calendar.calendar(2026))
