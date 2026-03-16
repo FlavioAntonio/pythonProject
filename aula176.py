@@ -31,9 +31,12 @@ string_json = '''
 
 
 data: Movie = json.loads(string_json)
-print(data['title'])
-print("titulo original do filme " + data['original_title'])
-print(data['year'] + 10)
-print(data['characters'][2])
-print(data['is_movie'])
+#print(data['title'])
+#print("titulo original do filme " + data['original_title'])
+#print(data['year'] + 10)
+#print(data['characters'][2])
+#print(data['is_movie'])
+
+print(json.dumps(data, indent=2, ensure_ascii=False))
+
 

@@ -1,0 +1,8 @@
+{
+    "produto": "Notebook",
+    "preço": 1200,
+    "em_estoque": true,
+    "codigo": 123456,
+    "tamanho": null
+    
+}
